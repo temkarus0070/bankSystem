@@ -14,7 +14,7 @@ public static final int SERVICE_TIME=50;
         BankCash bankCash=new BankCash(new Random(new Date().getTime()).nextDouble()*300000);
         List<BankClerk> clerkList = generate(N,bankCash);
         runClerks(clerkList);
-        Generator generator=new Generator(clerkList);
+        Generator generator=new Generator(clerkList,CLIENTS_PER_MINUTE);
         generator.start();
     }
 
